@@ -1,4 +1,5 @@
-DataExplorer Web Application :crystal_ball:
+**DataExplorer Web Application :crystal_ball:**
+
 The DataExplorer is an interactive web application designed to empower users to perform Exploratory Data Analysis (EDA) with ease and efficiency. This intuitive tool allows users to upload their datasets in CSV format, swiftly process and visualize the data, and gain valuable insights from their data.
 
 Key Features: 
