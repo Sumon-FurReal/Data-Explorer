@@ -64,7 +64,7 @@ if data is not None:
 
 # Histogram
     elif plot_type == "Hist":
-        fig = px.histogram(data, x=x_axis ,  color_discrete_sequence=px.colors.sequential.Portland)
+        fig = px.histogram(data, x=x_axis ,  color_discrete_sequence=px.colors.sequential.Sinebow)
         st.plotly_chart(fig)
 
 # Box Plot
