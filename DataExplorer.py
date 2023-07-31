@@ -70,7 +70,7 @@ if data is not None:
 
 # Histogram
     elif plot_type == "Hist":
-        fig = px.histogram(data, x=x_axis ,  color_discrete_sequence=px.colors.sequential.Alphabet)
+        fig = px.histogram(data, x=x_axis ,  color_discrete_sequence=px.colors.qualitative.Set3)
         fig.update_xaxes(showgrid=False)
         fig.update_yaxes(showgrid=False)
         st.plotly_chart(fig)
