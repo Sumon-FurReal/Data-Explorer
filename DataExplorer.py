@@ -50,8 +50,8 @@ if data is not None:
 # Scatter plot
     if plot_type == "Scatter":
         fig = px.scatter(data, x=x_axis, y=y_axis, color_discrete_sequence=px.colors.qualitative.Safe)
-        fig.update_xaxes(showgrid=True, gridwidth=0.3)
-        fig.update_yaxes(showgrid=True, gridwidth=0.3)
+        fig.update_xaxes(showgrid=False, gridwidth=0.3)
+        fig.update_yaxes(showgrid=False, gridwidth=0.3)
         st.plotly_chart(fig)
 
 
