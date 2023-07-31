@@ -4,6 +4,11 @@ import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+# Set the maximum width of the Streamlit app
+st.set_page_config(layout="wide")
+st.max_width(750)
+
+
 # Title and info
 st.title("Data Explorer :crystal_ball:")
 st.info("The DataExplorer is an interactive web application designed to empower users to perform Exploratory Data Analysis (EDA) with ease and efficiency. With this intuitive tool, users can upload their datasets in CSV format, and the application will swiftly process and visualize the data to gain valuable insights.")
