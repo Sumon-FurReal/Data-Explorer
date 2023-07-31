@@ -49,37 +49,37 @@ if data is not None:
 # Scatter plot
     if plot_type == "Scatter":
         fig = px.scatter(data, x=x_axis, y=y_axis, color_discrete_sequence=px.colors.qualitative.Safe)
-        fig.update_xaxes(showgrid=True,  gridwidth=0.5)
-        fig.update_yaxes(showgrid=True,  gridwidth=0.5)
+        fig.update_xaxes(showgrid=False)
+        fig.update_yaxes(showgrid=False)
         st.plotly_chart(fig)
 
 
 # Line chart
     elif plot_type == "Line":
         fig = px.line(data, x=x_axis, y=y_axis, color_discrete_sequence=px.colors.qualitative.Pastel)
-        fig.update_xaxes(showgrid=True, gridwidth=0.5)
-        fig.update_yaxes(showgrid=True, gridwidth=0.5)
+        fig.update_xaxes(showgrid=False)
+        fig.update_yaxes(showgrid=False)
         st.plotly_chart(fig)
 
 # Bar chart
     elif plot_type == "Bar":
         fig = px.bar(data, x=x_axis, y=y_axis, color_discrete_sequence=px.colors.qualitative.Pastel)
-        fig.update_xaxes(showgrid=True, gridwidth=0.5)
-        fig.update_yaxes(showgrid=True, gridwidth=0.5)
+        fig.update_xaxes(showgrid=False)
+        fig.update_yaxes(showgrid=False)
         st.plotly_chart(fig)
 
 # Histogram
     elif plot_type == "Hist":
         fig = px.histogram(data, x=x_axis ,  color_discrete_sequence=px.colors.sequential.Safe)
-        fig.update_xaxes(showgrid=True, gridwidth=0.5)
-        fig.update_yaxes(showgrid=True, gridwidth=0.5)
+        fig.update_xaxes(showgrid=False)
+        fig.update_yaxes(showgrid=False)
         st.plotly_chart(fig)
 
 # Box Plot
     elif plot_type == "Box":
         fig = px.box(data, x=x_axis, y=y_axis, color_discrete_sequence=px.colors.sequential.YlGnBu)
-        fig.update_xaxes(showgrid=True, gridwidth=0.5)
-        fig.update_yaxes(showgrid=True, gridwidth=0.5)
+        fig.update_xaxes(showgrid=False)
+        fig.update_yaxes(showgrid=False)
         st.plotly_chart(fig)
 
 
