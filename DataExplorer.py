@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+import plotly.express as px
 import seaborn as sns
+import matplotlib.pyplot as plt
 
 # Title and info
 st.title("Data Explorer :crystal_ball:")
@@ -31,6 +32,7 @@ if data is not None:
     st.write("Data Sample :")
     st.dataframe(data.head(21))
 
+
 # Data visualization
 if data is not None:
     st.header("Interactive Visualizations :bar_chart:")
@@ -39,57 +41,43 @@ if data is not None:
     y_axis = st.selectbox("Select Y-axis :", columns)
 
     plot_type = st.selectbox(
-        "Select Plot Type:", ["scatter", "line",
-                              "bar", "hist", "box", "heatmap"]
+        "Select Plot Type:", ["Scatter", "Line",
+                              "Bar", "Hist", "Box", "Heatmap"]
     )
 
+
 # Scatter plot
-    if plot_type == "scatter":
-        plt.figure(figsize=(8, 6))
-        plt.scatter(data[x_axis], data[y_axis])
-        plt.xlabel(x_axis)
-        plt.ylabel(y_axis)
-        st.pyplot()
+    if plot_type == "Scatter":
+        fig = px.scatter(data, x=x_axis, y=y_axis, color_discrete_sequence=px.colors.qualitative.Safe)
+        st.plotly_chart(fig)
+
 
 # Line chart
-    elif plot_type == "line":
-        plt.figure(figsize=(8, 6))
-        plt.plot(data[x_axis], data[y_axis])
-        plt.xlabel(x_axis)
-        plt.ylabel(y_axis)
-        st.pyplot()
+    elif plot_type == "Line":
+        fig = px.line(data, x=x_axis, y=y_axis, color_discrete_sequence=px.colors.qualitative.Pastel)
+        st.plotly_chart(fig)
 
 # Bar chart
-    elif plot_type == "bar":
-        plt.figure(figsize=(10, 6))
-        sns.barplot(x=x_axis, y=y_axis, data=data)
-        plt.xlabel(x_axis)
-        plt.ylabel(y_axis)
-        st.pyplot()
+    elif plot_type == "Bar":
+        fig = px.bar(data, x=x_axis, y=y_axis, color_discrete_sequence=px.colors.qualitative.Pastel)
+        st.plotly_chart(fig)
 
 # Histogram
-    elif plot_type == "hist":
-        plt.figure(figsize=(8, 6))
-        plt.hist(data[x_axis], bins=10, edgecolor='black')
-        plt.xlabel(x_axis)
-        plt.ylabel("Frequency")
-        st.pyplot()
+    elif plot_type == "Hist":
+        fig = px.histogram(data, x=x_axis ,  color_discrete_sequence=px.colors.sequential.Magma)
+        st.plotly_chart(fig)
 
 # Box Plot
-    elif plot_type == "box":
-        plt.figure(figsize=(8, 6))
-        sns.boxplot(x=x_axis, y=y_axis, data=data)
-        plt.xlabel(x_axis)
-        plt.ylabel(y_axis)
-        st.pyplot()
+    elif plot_type == "Box":
+        fig = px.box(data, x=x_axis, y=y_axis, color_discrete_sequence=px.colors.sequential.YlGnBu)
+        st.plotly_chart(fig)
+
 
 # Heat Map
-    elif plot_type == "heatmap":
-        plt.figure(figsize=(10, 8))
-        heatmap_data = data.pivot_table(
-            index=x_axis, columns=y_axis, values=columns[0])
-        sns.heatmap(heatmap_data, annot=True, cmap="YlGnBu")
-        st.pyplot()
+    elif plot_type == "Heatmap":
+        fig = px.density_heatmap(data, x=x_axis, y=y_axis , color_continuous_scale='Viridis')
+        st.plotly_chart(fig)
+
 
 # Data Filtering
 if data is not None:
