@@ -48,7 +48,7 @@ if data is not None:
 
 # Scatter plot
     if plot_type == "Scatter":
-        fig = px.scatter(data, x=x_axis, y=y_axis, color_discrete_sequence=px.colors.qualitative.glasbey)
+        fig = px.scatter(data, x=x_axis, y=y_axis, color_discrete_sequence=px.colors.qualitative.Glasbey)
         st.plotly_chart(fig)
 
 
