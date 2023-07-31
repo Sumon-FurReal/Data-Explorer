@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Set the maximum width of the Streamlit app
-st.set_page_config(layout="wide")
+st.set_page_config(layout="center")
 
 # Title and info
 st.title("Data Explorer :crystal_ball:")
